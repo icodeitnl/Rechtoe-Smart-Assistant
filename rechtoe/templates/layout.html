@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html lang = "en-US">
+<head>
+      <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>{% block title %}{% endblock %}</title> 
+   
+       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css"/>    
+      <link rel=stylesheet  href="{{ url_for('static', filename='style.css') }}">   
+     
+</head>
+    
+<body>
+      <nav class="navbar navbar-default">
+      <div class="container-fluid">
+      <ul class="nav navbar-nav">
+            <li><a href="{{ url_for('index') }}">RECHTOE LEGAL ASSISTANT</a></li>
+
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+            <li><a href="/logout"></span> LOGOUT</a></li>
+      </ul>
+      </div>
+</nav>
+        {% block body %}
+        {% endblock %}
+    </body>
+</html>
+    

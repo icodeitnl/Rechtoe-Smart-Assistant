@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>{% block title %}{% endblock %}RECHTOE</title>
+     
+  <link rel=stylesheet  href="{{ url_for('static', filename='style.css') }}">   
+  </head>
+
+<body>
+<h1>RECHTOE<br>LEGAL ASSISTANT</h1>
+
+  <div class="login-page">
+  <div class="form">
+    <form  action="/register" method="POST" class="register-form">
+      <input type="name" name="name" placeholder="Name">
+      <input type="username" name="username" placeholder="Email">
+      <input type="password" name="password" placeholder="Password"> 
+      <input type="submit" value="Register">
+      <p class="message">Already registered? <a href="#">Sign In</a></p>
+    </form>
+    <form action="/login" method="POST" class="login-form">
+      <input type="username" name="username" placeholder="Username">
+      <input type="password" name="password" placeholder="Password">
+      <input type="submit" value="Login">
+      <p class="message">Not registered? <a href="#">Create an account</a></p>
+    </form>
+  </div>
+</div>
+
+  <script type=text/javascript src="{{
+  url_for('static', filename='jquery.js') }}"></script>
+  <script type=text/javascript src="{{ url_for('static', filename='index.js') }}"></script> 
+
+
+
+</body>
+
+</html>

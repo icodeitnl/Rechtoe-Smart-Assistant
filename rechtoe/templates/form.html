@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+{% block title %}
+    Home Page
+{% endblock %}
+{% block body %}
+    {% if session['logged_in'] %}
+     <div class="container" >
+        <h2> Welkom {{ session.username }} !</h2>
+            <br>   
+        <form method="POST" action="/form">
+            <div class="form-group">
+                    <label>Document Form</label>
+            <textarea type="text" rows="15" cols="5" class="form-control"  name="rawtext" required="true" style="background-color: #E8E3DA;">  Copy your text here </textarea>
+            <br/>
+             <form>
+             <div class="form-group">
+              <label for="exampleFormControlFile1">Upload File</label> 
+            <input type="file" class="form-control-file" id="exampleFormControlFile1">
+            </div>
+        </form>
+        <br/>
+        <button type="submit" class="btn btn-warning"><i class="fa fa-comment"></i>Submit</button>
+        </div>
+        </form>
+        </div>
+        <div class="container">
+        <h2>Redacted</h2>
+        <p>The form below contains redacted quotations or documents:</p>
+        <form>
+        <textarea type="text" rows="15" cols="5" class="form-control"  name="redacted_text" required="true" style="background-color: #E8E3DA;">{{redacted_text}}</textarea>     
+        </form>
+        </br>
+        <button type="submit" class="btn btn-warning"><i class="fa fa-comment"></i>Save</button>
+        </div>
+    {% else %}
+        <h2>You are not logged in</h2>
+        <p><a href="index.html">Please log in</a></p>
+    {% endif %}
+{% endblock %}          
